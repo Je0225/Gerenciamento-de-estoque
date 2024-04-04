@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5BE3FC3-1FFD-4F4E-8CA8-D0C1250F8583}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GerenciamentoDeEstoque</RootNamespace>
+    <AssemblyName>GerenciamentoDeEstoque</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArquivosJson.cs" />
+    <Compile Include="CadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroFornecedor.Designer.cs">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="FormCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroCliente.Designer.cs">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLista.Designer.cs">
+      <DependentUpon>FormLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaFornecedores.Designer.cs">
+      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListFornecedores.Designer.cs">
+      <DependentUpon>FormListFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastroFornecedor.resx">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroCliente.resx">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLista.resx">
+      <DependentUpon>FormLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaFornecedores.resx">
+      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListFornecedores.resx">
+      <DependentUpon>FormListFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
