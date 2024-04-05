@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Empresa": "Priori",
+    "Marca": "rumo",
+    "ProdutosFornecidos": []
+  },
+  {
+    "Id": 2,
+    "Empresa": "priori sistemas",
+    "Marca": "govbox",
+    "ProdutosFornecidos": []
+  }
+]

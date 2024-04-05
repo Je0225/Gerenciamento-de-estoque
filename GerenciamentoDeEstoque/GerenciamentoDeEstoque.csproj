@@ -63,6 +63,12 @@
     <Compile Include="FormCadastroCliente.Designer.cs">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroProduto.Designer.cs">
+      <DependentUpon>FormCadastroProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="FormListaFornecedores.Designer.cs">
       <DependentUpon>FormListaFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaProdutos.Designer.cs">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormListFornecedores.cs">
       <SubType>Form</SubType>
@@ -87,6 +99,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelecaoFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecaoFornecedor.Designer.cs">
+      <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
@@ -97,17 +115,26 @@
     <EmbeddedResource Include="FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroProduto.resx">
+      <DependentUpon>FormCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLista.resx">
       <DependentUpon>FormLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaFornecedores.resx">
       <DependentUpon>FormListaFornecedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormListaProdutos.resx">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListFornecedores.resx">
       <DependentUpon>FormListFornecedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecaoFornecedor.resx">
+      <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

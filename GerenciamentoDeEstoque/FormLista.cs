@@ -16,7 +16,7 @@ namespace GerenciamentoDeEstoque {
                 Clientes = new List<Cliente>();
                 return;
             }
-            id = Clientes[Clientes.Count - 1].Id;
+            id = Clientes.Count - 1;
             foreach (Cliente cliente in Clientes) {
                 lvClientes.Items.Add(new ListViewItem(new[] { cliente.Nome, cliente.Sobrenome }));
             }

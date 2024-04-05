@@ -26,7 +26,7 @@ namespace GerenciamentoDeEstoque {
 
         private void btnSalvar_Click(object sender, EventArgs e) {
             if (tbMarca.Text.Length < 3 || tbEmpresa.Text.Length < 3) {
-                MessageBox.Show("Os campos 'Empresa' e 'Marca' não podem ser nulos ou ter menos que 3 letras");
+                MessageBox.Show(@"Os campos 'Empresa' e 'Marca' não podem ser nulos ou ter menos que 3 letras");
             }
             DialogResult = DialogResult.OK;
             Close();

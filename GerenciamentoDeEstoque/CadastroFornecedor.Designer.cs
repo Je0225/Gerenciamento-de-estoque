@@ -38,7 +38,7 @@
             // 
             // lblEmpresa
             // 
-            this.lblEmpresa.Location = new System.Drawing.Point(16, 24);
+            this.lblEmpresa.Location = new System.Drawing.Point(16, 21);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(51, 23);
             this.lblEmpresa.TabIndex = 0;
@@ -47,21 +47,21 @@
             // 
             // tbEmpresa
             // 
-            this.tbEmpresa.Location = new System.Drawing.Point(73, 27);
+            this.tbEmpresa.Location = new System.Drawing.Point(73, 24);
             this.tbEmpresa.Name = "tbEmpresa";
             this.tbEmpresa.Size = new System.Drawing.Size(251, 20);
             this.tbEmpresa.TabIndex = 3;
             // 
             // tbMarca
             // 
-            this.tbMarca.Location = new System.Drawing.Point(73, 60);
+            this.tbMarca.Location = new System.Drawing.Point(73, 57);
             this.tbMarca.Name = "tbMarca";
             this.tbMarca.Size = new System.Drawing.Size(251, 20);
             this.tbMarca.TabIndex = 4;
             // 
             // lblMarca
             // 
-            this.lblMarca.Location = new System.Drawing.Point(16, 57);
+            this.lblMarca.Location = new System.Drawing.Point(16, 54);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(51, 23);
             this.lblMarca.TabIndex = 6;
@@ -70,7 +70,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(249, 105);
+            this.btnCancelar.Location = new System.Drawing.Point(249, 113);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -80,7 +80,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(151, 105);
+            this.btnSalvar.Location = new System.Drawing.Point(151, 113);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 9;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 160);
+            this.ClientSize = new System.Drawing.Size(387, 160);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMarca);

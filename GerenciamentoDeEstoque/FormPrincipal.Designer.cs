@@ -37,6 +37,7 @@
             this.listagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosPorFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +89,8 @@
             // 
             this.tsmEstoque.AutoSize = false;
             this.tsmEstoque.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsmEstoque.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDeProdutoToolStripMenuItem});
             this.tsmEstoque.Name = "tsmEstoque";
             this.tsmEstoque.Size = new System.Drawing.Size(100, 30);
             this.tsmEstoque.Text = "Estoque";
@@ -113,6 +116,13 @@
             this.vendasPorClienteToolStripMenuItem.Name = "vendasPorClienteToolStripMenuItem";
             this.vendasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.vendasPorClienteToolStripMenuItem.Text = "Vendas por cliente";
+            // 
+            // cadastroDeProdutoToolStripMenuItem
+            // 
+            this.cadastroDeProdutoToolStripMenuItem.Name = "cadastroDeProdutoToolStripMenuItem";
+            this.cadastroDeProdutoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.cadastroDeProdutoToolStripMenuItem.Text = "Cadastro de Produto";
+            this.cadastroDeProdutoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeProdutoToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -140,6 +150,7 @@
         private System.Windows.Forms.ToolStripMenuItem listagemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosPorFornecedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasPorClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDeProdutoToolStripMenuItem;
     }
 }
 

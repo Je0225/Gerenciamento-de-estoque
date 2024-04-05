@@ -16,3 +16,6 @@ C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\obj\Debug\
 C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\bin\Debug\Newtonsoft.Json.dll
 C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\bin\Debug\Newtonsoft.Json.xml
 C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\obj\Debug\GerenciamentoDeEstoque.csproj.CopyComplete
+C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\obj\Debug\GerenciamentoDeEstoque.FormCadastroProduto.resources
+C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\obj\Debug\GerenciamentoDeEstoque.FormListaProdutos.resources
+C:\Users\User\Documents\GerenciamentoDeEstoque\GerenciamentoDeEstoque\obj\Debug\GerenciamentoDeEstoque.FormSelecaoFornecedor.resources

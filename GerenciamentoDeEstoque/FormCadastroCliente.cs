@@ -22,7 +22,7 @@ namespace GerenciamentoDeEstoque {
          
         private void btnSalvar_Click(object sender, EventArgs e) {
             if (Nome.Length < 3 || Sobrenome.Length < 3) {
-                MessageBox.Show("O campo 'Nome' e o campo 'Sobrenome' não podem ter menos que 3 letras");
+                MessageBox.Show(@"O campo 'Nome' e o campo 'Sobrenome' não podem ter menos que 3 letras");
                 return;
             }
             DialogResult = DialogResult.OK;
