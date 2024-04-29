@@ -11,13 +11,10 @@ namespace GerenciamentoDeEstoque {
 
         public String Marca { get; set; }
 
-        public List<Produto> ProdutosFornecidos { get; set; }
-
         public Fornecedor(Int32 id, String empresa, String marca) {
             Id = id;
             Empresa = empresa;
             Marca = marca;
-            ProdutosFornecidos = new List<Produto>();
         }
 
     }

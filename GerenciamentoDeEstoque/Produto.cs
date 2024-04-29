@@ -15,16 +15,6 @@ namespace GerenciamentoDeEstoque {
 
         public Int32 QuantidadeEstoque { get; set; }
 
-        public Double DescontoMaximo {
-            get {
-                if (Valor >= 50) {
-                    return 0.10;
-                } else {
-                    return 0.05;
-                }
-            }
-        }
-
         public Produto(int id, string descricao, Fornecedor fornecedor, Double valor, int quantidadeEstoque) {
             Id = id;
             Descricao = descricao;

@@ -1,39 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
     public partial class FormListaFornecedores: Form {
 
-        private List<Fornecedor> Fornecedores;
-        private Int32 id;
+        private Int32 Id { get; set; }
 
         public FormListaFornecedores() {
             InitializeComponent();
-
-            Fornecedores = ArquivosJson.DesserializarListaFornecedor();
-            if (Fornecedores == null) {
-                Fornecedores = new List<Fornecedor>();
-                return;
-            }
-            id = Fornecedores.Count - 1;
-            foreach (Fornecedor forn in Fornecedores) {
-                lvFornecedores.Items.Add(new ListViewItem(new[] { forn.Empresa, forn.Marca, forn.ProdutosFornecidos.Count.ToString() }));
-            }
+            Id = FilesJson.Banco.Fornecedores.Count > 0 ? FilesJson.Banco.Fornecedores.Count : 1;
+            AddItendListView();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
+            CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(null, null);
             cadastroFornecedor.ShowDialog();
             if (cadastroFornecedor.DialogResult != DialogResult.OK) {
                 return;
             }
-            id++;
-            Fornecedor fornecedor = new Fornecedor(id, cadastroFornecedor.Empresa, cadastroFornecedor.Marca);
-            Fornecedores.Add(fornecedor);
-            ArquivosJson.Serializar(Fornecedores);
-            lvFornecedores.Items.Add(new ListViewItem(new[] { fornecedor.Empresa, fornecedor.Marca, fornecedor.ProdutosFornecidos.Count.ToString() }));
+            Fornecedor fornecedor = new Fornecedor(Id, cadastroFornecedor.Empresa, cadastroFornecedor.Marca);
+            Id++;
+            FilesJson.Banco.Fornecedores.Add(fornecedor);
+            FilesJson.Serializar();
+            AddItendListView();
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
@@ -41,9 +31,9 @@ namespace GerenciamentoDeEstoque {
             if (selecionado.Count == 0) {
                 return;
             }
-            foreach (Fornecedor forn in Fornecedores) {
-                if (forn.Empresa.Equals(selecionado[0].Text)) {
-                    CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(forn.Empresa, forn.Marca, forn.ProdutosFornecidos);
+            foreach (Fornecedor forn in FilesJson.Banco.Fornecedores) {
+                if (forn.Equals(selecionado[0].Tag)) {
+                    CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(forn.Empresa, forn.Marca);
                     cadastroFornecedor.ShowDialog();
 
                     if (cadastroFornecedor.DialogResult != DialogResult.OK) {
@@ -51,14 +41,19 @@ namespace GerenciamentoDeEstoque {
                     }
                     forn.Empresa = cadastroFornecedor.Empresa;
                     forn.Marca = cadastroFornecedor.Marca;
-                    ArquivosJson.Serializar(Fornecedores);
+                    FilesJson.Serializar();
+                    AddItendListView();
                     break;
                 }
             }
-            Fornecedores = ArquivosJson.DesserializarListaFornecedor();
-            lvFornecedores.Items.Clear();
-            foreach (Fornecedor f in Fornecedores) {
-                lvFornecedores.Items.Add(new ListViewItem(new[] { f.Empresa, f.Marca, f.ProdutosFornecidos.Count.ToString() }));
+        }
+
+        private void AddItendListView() {
+            if (lvFornecedores.Items.Count > 0) {
+                lvFornecedores.Items.Clear();
+            }
+            foreach (Fornecedor forn in FilesJson.Banco.Fornecedores) {
+                lvFornecedores.Items.Add(new ListViewItem(new[] { forn.Empresa, forn.Marca }) {Tag = forn});
             }
         }
 

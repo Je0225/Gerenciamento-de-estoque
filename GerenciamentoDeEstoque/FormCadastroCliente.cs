@@ -9,15 +9,12 @@ namespace GerenciamentoDeEstoque {
 
         public String Sobrenome => tbSobrenome.Text.Trim();
 
-        // Construtor para instância do objeto para edição das informações (FormLista > btnEditar).
         public FormCadastroCliente(String nome, String sobrenome) {
             InitializeComponent();
-            tbNome.Text = nome;
-            tbSobrenome.Text = sobrenome;
-        }
-
-        public FormCadastroCliente() {
-            InitializeComponent();
+            if (nome != null || sobrenome != null) {
+                tbNome.Text = nome;
+                tbSobrenome.Text = sobrenome;
+            }
         }
          
         private void btnSalvar_Click(object sender, EventArgs e) {

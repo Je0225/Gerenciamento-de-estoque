@@ -49,7 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArquivosJson.cs" />
+    <Compile Include="Banco.cs" />
+    <Compile Include="FilesJson.cs" />
     <Compile Include="CadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,12 @@
     <Compile Include="FormCadastroProduto.Designer.cs">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInformaProdutoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformaProdutoVenda.Designer.cs">
+      <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,17 +94,17 @@
     <Compile Include="FormListaProdutos.Designer.cs">
       <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListFornecedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormListFornecedores.Designer.cs">
-      <DependentUpon>FormListFornecedores.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRealizaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRealizaVenda.Designer.cs">
+      <DependentUpon>FormRealizaVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSelecaoFornecedor.cs">
       <SubType>Form</SubType>
@@ -105,10 +112,23 @@
     <Compile Include="FormSelecaoFornecedor.Designer.cs">
       <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelecaoProdutoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecaoProdutoVenda.Designer.cs">
+      <DependentUpon>FormSelecaoProdutoVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelecaoClienteVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecaoClienteVenda.Designer.cs">
+      <DependentUpon>SelecaoClienteVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venda.cs" />
     <EmbeddedResource Include="CadastroFornecedor.resx">
       <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroProduto.resx">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInformaProdutoVenda.resx">
+      <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLista.resx">
       <DependentUpon>FormLista.cs</DependentUpon>
@@ -127,14 +150,17 @@
     <EmbeddedResource Include="FormListaProdutos.resx">
       <DependentUpon>FormListaProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListFornecedores.resx">
-      <DependentUpon>FormListFornecedores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRealizaVenda.resx">
+      <DependentUpon>FormRealizaVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSelecaoFornecedor.resx">
       <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecaoProdutoVenda.resx">
+      <DependentUpon>FormSelecaoProdutoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,6 +171,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelecaoClienteVenda.resx">
+      <DependentUpon>SelecaoClienteVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

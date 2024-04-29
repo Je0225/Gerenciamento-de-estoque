@@ -10,24 +10,18 @@ namespace GerenciamentoDeEstoque {
 
         public String Marca => tbMarca.Text;
 
-        public List<Produto> ProdutosFornecidos;
-
-        // construtor usado para a edição do cadastro
-        public CadastroFornecedor(String empresa, String marca, List<Produto> produtosFornecidos) {
+        public CadastroFornecedor(String empresa, String marca) {
             InitializeComponent();
-            tbEmpresa.Text = empresa;
-            tbMarca.Text = marca;
-            ProdutosFornecidos = produtosFornecidos;
+            if (empresa != null || marca != null) {
+                tbEmpresa.Text = empresa;
+                tbMarca.Text = marca;
+            }
         }
-        
-        public CadastroFornecedor() {
-            InitializeComponent();
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e) {
             if (tbMarca.Text.Length < 3 || tbEmpresa.Text.Length < 3) {
                 MessageBox.Show(@"Os campos 'Empresa' e 'Marca' não podem ser nulos ou ter menos que 3 letras");
-            }
+                return;
+            } 
             DialogResult = DialogResult.OK;
             Close();
         }

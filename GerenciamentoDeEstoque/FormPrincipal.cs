@@ -7,12 +7,7 @@ namespace GerenciamentoDeEstoque {
 
         public FormPrincipal() {
             InitializeComponent();
-            ArquivosJson.CriaArquivos();
-        }
-
-        public bool SerializacaoJson(object objeto, String path) {
-
-            return true;
+            FilesJson.CriaArquivosEListas();
         }
 
         private void tsmiClientes_Click(object sender, EventArgs e) {
@@ -33,6 +28,11 @@ namespace GerenciamentoDeEstoque {
             formListaProdutos.Dispose();
         }
 
+        private void realizarVendaToolStripMenuItem_Click(object sender, EventArgs e) {
+            FormRealizaVenda frmRealizaVenda = new FormRealizaVenda();
+            frmRealizaVenda.ShowDialog(this);
+            frmRealizaVenda.Dispose();
+        }
     }
 
 }

@@ -1,0 +1,87 @@
+{
+  "Clientes": [
+    {
+      "Id": 1,
+      "Nome": "jeni",
+      "Sobrenome": "mattes"
+    }
+  ],
+  "Produtos": [ ],
+  "Fornecedores": [
+    {
+      "Id": 1,
+      "Empresa": "Priori Soluções",
+      "Marca": "Rumo"
+    },
+    {
+      "Id": 1,
+      "Empresa": "Priori Sistemas",
+      "Marca": "GOVBOX"
+    }
+  ],
+  "Vendas": [
+    {
+      "Id": 1,
+      "Cliente": {
+        "Id": 1,
+        "Nome": "jeni",
+        "Sobrenome": "mattes"
+      },
+      "ItensDaVenda": [
+        {
+          "Key": {
+            "Id": 1,
+            "Descricao": "GOVBOX",
+            "Fornecedor": {
+              "Id": 1,
+              "Empresa": "Priori Sistemas",
+              "Marca": "GOVBOX"
+            },
+            "Valor": 100.0,
+            "QuantidadeEstoque": 2
+          },
+          "Value": 2
+        }
+      ],
+      "Modalidade": "Parcelado",
+      "PercentualDesconto": 0.0,
+      "ValorItens": 200.0,
+      "TotalVenda": 200.0
+    },
+    {
+      "Id": 1,
+      "Cliente": {
+        "Id": 1,
+        "Nome": "jeni",
+        "Sobrenome": "mattes"
+      },
+      "ItensDaVenda": [
+        {
+          "Key": {
+            "Id": 2,
+            "Descricao": "Rumo",
+            "Fornecedor": {
+              "Id": 1,
+              "Empresa": "Priori Soluções",
+              "Marca": "Rumo"
+            },
+            "Valor": 150.0,
+            "QuantidadeEstoque": 1
+          },
+          "Value": 2
+        }
+      ],
+      "Modalidade": "A Vista - Dinheiro",
+      "PercentualDesconto": 10.0,
+      "ValorItens": 300.0,
+      "TotalVenda": 270.0
+    }
+  ],
+  "ModalidadesPagamento": [
+    "A Vista - Dinheiro",
+    "Parcelado",
+    "Cartão de Débito",
+    "Cartão de Crédito",
+    "Pix"
+  ]
+}

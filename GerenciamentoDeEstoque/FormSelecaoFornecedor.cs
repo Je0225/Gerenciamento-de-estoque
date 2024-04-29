@@ -5,18 +5,22 @@ namespace GerenciamentoDeEstoque {
 
     public partial class FormSelecaoFornecedor: Form {
 
-        public ListView.SelectedListViewItemCollection Selecionado => lvFornecedores.SelectedItems;
+        public Fornecedor FornecedorSelecionado { get; set; }
 
         public FormSelecaoFornecedor() {
             InitializeComponent();
+            foreach (Fornecedor forn in FilesJson.Banco.Fornecedores) {
+                lvFornecedores.Items.Add(new ListViewItem(new[] { forn.Empresa, forn.Marca }) { Tag = forn});
+            }
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
-            if (Selecionado.Count > 0) {
-                MessageBox.Show($@"Selecione um item da lista antes de salvar");
+            FornecedorSelecionado = ProcuraProdutoSelecionado();
+            if (FornecedorSelecionado == null) {
+                MessageBox.Show(@"Selecione um item da lista");
                 return;
             }
+            DialogResult = DialogResult.OK;
             Close();
         }
 
@@ -24,6 +28,17 @@ namespace GerenciamentoDeEstoque {
             DialogResult = DialogResult.Cancel;
             Close();
         }
-    }
 
+        private Fornecedor ProcuraProdutoSelecionado() {
+            Fornecedor fornecedor = null;
+            if (lvFornecedores.SelectedItems.Count > 0) {
+                foreach (Fornecedor forn in FilesJson.Banco.Fornecedores) {
+                    if (lvFornecedores.SelectedItems[0].Tag.Equals(forn)) {
+                        fornecedor = forn;
+                    }
+                }
+            }
+            return fornecedor;
+        }
+    }
 }

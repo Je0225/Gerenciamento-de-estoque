@@ -36,7 +36,6 @@
             this.lvFornecedores = new System.Windows.Forms.ListView();
             this.clmEmpresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmMarca = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmQtdItens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -93,9 +92,9 @@
             // 
             this.lvFornecedores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmEmpresa,
-            this.clmMarca,
-            this.clmQtdItens});
+            this.clmMarca});
             this.lvFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvFornecedores.FullRowSelect = true;
             this.lvFornecedores.HideSelection = false;
             this.lvFornecedores.Location = new System.Drawing.Point(30, 30);
             this.lvFornecedores.Name = "lvFornecedores";
@@ -113,11 +112,6 @@
             // 
             this.clmMarca.Text = "Marca";
             this.clmMarca.Width = 158;
-            // 
-            // clmQtdItens
-            // 
-            this.clmQtdItens.Text = "Quantidade de Itens Fornecidos";
-            this.clmQtdItens.Width = 188;
             // 
             // FormListaFornecedores
             // 
@@ -145,6 +139,5 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ColumnHeader clmEmpresa;
         private System.Windows.Forms.ColumnHeader clmMarca;
-        private System.Windows.Forms.ColumnHeader clmQtdItens;
     }
 }

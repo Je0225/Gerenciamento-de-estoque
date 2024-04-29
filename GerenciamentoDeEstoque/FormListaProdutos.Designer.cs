@@ -32,13 +32,12 @@
             this.lvProdutos = new System.Windows.Forms.ListView();
             this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmFornecedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmQtdEstoque = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.clmValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmDescontoMax = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmQtdEstoque = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +58,6 @@
             this.clmDescricao,
             this.clmFornecedor,
             this.clmValor,
-            this.clmDescontoMax,
             this.clmQtdEstoque});
             this.lvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvProdutos.FullRowSelect = true;
@@ -81,6 +79,16 @@
             // 
             this.clmFornecedor.Text = "Fornecedor";
             this.clmFornecedor.Width = 141;
+            // 
+            // clmValor
+            // 
+            this.clmValor.Text = "Valor";
+            this.clmValor.Width = 73;
+            // 
+            // clmQtdEstoque
+            // 
+            this.clmQtdEstoque.Text = "Qtd em Estoque";
+            this.clmQtdEstoque.Width = 102;
             // 
             // panel1
             // 
@@ -120,21 +128,6 @@
             this.panel3.Size = new System.Drawing.Size(800, 100);
             this.panel3.TabIndex = 5;
             // 
-            // clmValor
-            // 
-            this.clmValor.Text = "Valor";
-            this.clmValor.Width = 73;
-            // 
-            // clmDescontoMax
-            // 
-            this.clmDescontoMax.Text = "Desconto Máx.";
-            this.clmDescontoMax.Width = 90;
-            // 
-            // clmQtdEstoque
-            // 
-            this.clmQtdEstoque.Text = "Qtd em Estoque";
-            this.clmQtdEstoque.Width = 102;
-            // 
             // FormListaProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,7 +155,6 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ColumnHeader clmValor;
-        private System.Windows.Forms.ColumnHeader clmDescontoMax;
         private System.Windows.Forms.ColumnHeader clmQtdEstoque;
     }
 }

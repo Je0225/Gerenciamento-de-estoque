@@ -32,20 +32,18 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
-            this.lblDescontoMax = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.tbValor = new System.Windows.Forms.TextBox();
-            this.tbDescontoMax = new System.Windows.Forms.TextBox();
             this.tbQtdEstoque = new System.Windows.Forms.TextBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(320, 198);
+            this.btnCancelar.Location = new System.Drawing.Point(310, 178);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 0;
@@ -55,7 +53,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(230, 198);
+            this.btnSalvar.Location = new System.Drawing.Point(220, 178);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 1;
@@ -81,18 +79,9 @@
             this.lblValor.Text = "Valor";
             this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDescontoMax
-            // 
-            this.lblDescontoMax.Location = new System.Drawing.Point(27, 126);
-            this.lblDescontoMax.Name = "lblDescontoMax";
-            this.lblDescontoMax.Size = new System.Drawing.Size(80, 13);
-            this.lblDescontoMax.TabIndex = 5;
-            this.lblDescontoMax.Text = "Desconto Máx.";
-            this.lblDescontoMax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(19, 157);
+            this.label5.Location = new System.Drawing.Point(19, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 6;
@@ -130,17 +119,9 @@
             this.tbValor.Size = new System.Drawing.Size(111, 20);
             this.tbValor.TabIndex = 14;
             // 
-            // tbDescontoMax
-            // 
-            this.tbDescontoMax.Enabled = false;
-            this.tbDescontoMax.Location = new System.Drawing.Point(113, 123);
-            this.tbDescontoMax.Name = "tbDescontoMax";
-            this.tbDescontoMax.Size = new System.Drawing.Size(111, 20);
-            this.tbDescontoMax.TabIndex = 15;
-            // 
             // tbQtdEstoque
             // 
-            this.tbQtdEstoque.Location = new System.Drawing.Point(113, 154);
+            this.tbQtdEstoque.Location = new System.Drawing.Point(113, 127);
             this.tbQtdEstoque.Name = "tbQtdEstoque";
             this.tbQtdEstoque.Size = new System.Drawing.Size(111, 20);
             this.tbQtdEstoque.TabIndex = 16;
@@ -160,16 +141,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 252);
+            this.ClientSize = new System.Drawing.Size(442, 222);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.tbQtdEstoque);
-            this.Controls.Add(this.tbDescontoMax);
             this.Controls.Add(this.tbValor);
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblDescontoMax);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblFornecedor);
             this.Controls.Add(this.btnSalvar);
@@ -190,13 +169,11 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblFornecedor;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.Label lblDescontoMax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox tbFornecedor;
         private System.Windows.Forms.TextBox tbValor;
-        private System.Windows.Forms.TextBox tbDescontoMax;
         private System.Windows.Forms.TextBox tbQtdEstoque;
         private System.Windows.Forms.Button btnSelecionar;
     }
