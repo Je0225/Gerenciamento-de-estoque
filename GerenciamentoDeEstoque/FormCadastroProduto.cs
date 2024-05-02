@@ -40,13 +40,14 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecaoFornecedor formSelecaoFornecedor = new FormSelecaoFornecedor();
-            formSelecaoFornecedor.ShowDialog();
-            if (formSelecaoFornecedor.DialogResult != DialogResult.OK) {
+            FormSelecao<Fornecedor> frmSelecao = new FormSelecao<Fornecedor>(FilesJson.Banco.Fornecedores, Fornecedor.GetColumnNames());
+            frmSelecao.ShowDialog();
+            if (frmSelecao.DialogResult != DialogResult.OK) {
                 return;
             }
-            Fornecedor = formSelecaoFornecedor.FornecedorSelecionado;
+            Fornecedor = frmSelecao.Selecionado;
             tbFornecedor.Text = Fornecedor.Empresa;
+            frmSelecao.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {

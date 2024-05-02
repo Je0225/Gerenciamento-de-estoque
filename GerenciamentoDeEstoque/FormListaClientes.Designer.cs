@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoDeEstoque
 {
-    partial class FormLista
+    partial class FormListaClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -122,7 +122,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "FormLista";
+            this.Name = "FormListaClientes";
             this.Text = "FormLista";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

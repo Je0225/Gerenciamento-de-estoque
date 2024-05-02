@@ -2,9 +2,7 @@
 
 namespace GerenciamentoDeEstoque {
 
-    public class Cliente {
-
-        public Int32 Id { get; set; }
+    public class Cliente: Model {
 
         public String Nome { get; set; }
 
@@ -14,6 +12,14 @@ namespace GerenciamentoDeEstoque {
             Id = id;
             Nome = nome;
             Sobrenome = sobrenome;
+        }
+
+        public override String[] GetValues() {
+            return new[] { Nome, Sobrenome };
+        }
+
+        public new static String[] GetColumnNames() {
+            return new[] { "Nome", "Sobrenome" };
         }
 
     }

@@ -51,11 +51,11 @@
   <ItemGroup>
     <Compile Include="Banco.cs" />
     <Compile Include="FilesJson.cs" />
-    <Compile Include="CadastroFornecedor.cs">
+    <Compile Include="FormCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroFornecedor.Designer.cs">
-      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    <Compile Include="FormCadastroFornecedor.Designer.cs">
+      <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs" />
     <Compile Include="FormCadastroCliente.cs">
@@ -76,11 +76,11 @@
     <Compile Include="FormInformaProdutoVenda.Designer.cs">
       <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLista.cs">
+    <Compile Include="FormListaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLista.Designer.cs">
-      <DependentUpon>FormLista.cs</DependentUpon>
+    <Compile Include="FormListaClientes.Designer.cs">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormListaFornecedores.cs">
       <SubType>Form</SubType>
@@ -106,31 +106,32 @@
     <Compile Include="FormRealizaVenda.Designer.cs">
       <DependentUpon>FormRealizaVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSelecaoFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSelecaoFornecedor.Designer.cs">
-      <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSelecaoProdutoVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSelecaoProdutoVenda.Designer.cs">
-      <DependentUpon>FormSelecaoProdutoVenda.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornecedor.cs" />
+    <Compile Include="FormSelecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecao.Designer.cs">
+      <DependentUpon>FormSelecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListagemProdPorFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListagemProdPorFornecedor.Designer.cs">
+      <DependentUpon>FormListagemProdPorFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListagemVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListagemVendas.Designer.cs">
+      <DependentUpon>FormListagemVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelecaoClienteVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelecaoClienteVenda.Designer.cs">
-      <DependentUpon>SelecaoClienteVenda.cs</DependentUpon>
-    </Compile>
     <Compile Include="Venda.cs" />
-    <EmbeddedResource Include="CadastroFornecedor.resx">
-      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroFornecedor.resx">
+      <DependentUpon>FormCadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroCliente.resx">
       <DependentUpon>FormCadastroCliente.cs</DependentUpon>
@@ -141,8 +142,8 @@
     <EmbeddedResource Include="FormInformaProdutoVenda.resx">
       <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLista.resx">
-      <DependentUpon>FormLista.cs</DependentUpon>
+    <EmbeddedResource Include="FormListaClientes.resx">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaFornecedores.resx">
       <DependentUpon>FormListaFornecedores.cs</DependentUpon>
@@ -156,11 +157,14 @@
     <EmbeddedResource Include="FormRealizaVenda.resx">
       <DependentUpon>FormRealizaVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSelecaoFornecedor.resx">
-      <DependentUpon>FormSelecaoFornecedor.cs</DependentUpon>
+    <EmbeddedResource Include="FormSelecao.resx">
+      <DependentUpon>FormSelecao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSelecaoProdutoVenda.resx">
-      <DependentUpon>FormSelecaoProdutoVenda.cs</DependentUpon>
+    <EmbeddedResource Include="FormListagemProdPorFornecedor.resx">
+      <DependentUpon>FormListagemProdPorFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListagemVendas.resx">
+      <DependentUpon>FormListagemVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,9 +175,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelecaoClienteVenda.resx">
-      <DependentUpon>SelecaoClienteVenda.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

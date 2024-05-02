@@ -11,9 +11,9 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void tsmiClientes_Click(object sender, EventArgs e) {
-            FormLista formListaClientes = new FormLista();
-            formListaClientes.ShowDialog(this);
-            formListaClientes.Dispose();
+            FormListaClientes formListaClientesClientes = new FormListaClientes();
+            formListaClientesClientes.ShowDialog(this);
+            formListaClientesClientes.Dispose();
         }
 
         private void tsmiFornecedores_Click(object sender, EventArgs e) {
@@ -32,6 +32,17 @@ namespace GerenciamentoDeEstoque {
             FormRealizaVenda frmRealizaVenda = new FormRealizaVenda();
             frmRealizaVenda.ShowDialog(this);
             frmRealizaVenda.Dispose();
+        }
+
+        private void produtosPorFornecedorToolStripMenuItem_Click(object sender, EventArgs e) {
+            FormListagemProdPorFornecedor formListProdPorFornecedor = new FormListagemProdPorFornecedor();
+            formListProdPorFornecedor.ShowDialog(this);
+            formListProdPorFornecedor.Dispose();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e) {
+            FormListagemVendas formListagemVendas = new FormListagemVendas();
+            formListagemVendas.ShowDialog();
         }
     }
 

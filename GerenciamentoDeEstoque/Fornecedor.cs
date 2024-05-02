@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace GerenciamentoDeEstoque {
 
-    public class Fornecedor {
-
-        public Int32 Id { get; set; }
+    public class Fornecedor: Model {
 
         public String Empresa { get; set; }
 
@@ -15,6 +14,14 @@ namespace GerenciamentoDeEstoque {
             Id = id;
             Empresa = empresa;
             Marca = marca;
+        }
+
+        public override String[] GetValues() {
+            return new[] {Empresa, Marca };
+        }
+
+        public new static String[] GetColumnNames() {
+            return new[] { "Empresa", "Marca" };
         }
 
     }

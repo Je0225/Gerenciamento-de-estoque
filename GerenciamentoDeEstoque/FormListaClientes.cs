@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
-    public partial class FormLista: Form {
+    public partial class FormListaClientes: Form {
 
         private Int32 Id { get; set; }
 
-        public FormLista() {
+        public FormListaClientes() {
             InitializeComponent();
             Id = FilesJson.Banco.Clientes.Count > 0? FilesJson.Banco.Clientes.Count: 1;
             AddItemsListView(); 
@@ -22,9 +22,10 @@ namespace GerenciamentoDeEstoque {
             }
             Cliente cliente = new Cliente(Id, frmCadCliente.Nome, frmCadCliente.Sobrenome);
             FilesJson.Banco.Clientes.Add(cliente);
-            FilesJson.Serializar();
             Id++;
+            FilesJson.Serializar();
             AddItemsListView();
+            frmCadCliente.Dispose();
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {

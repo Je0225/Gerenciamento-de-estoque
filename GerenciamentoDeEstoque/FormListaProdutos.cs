@@ -11,7 +11,7 @@ namespace GerenciamentoDeEstoque {
 
         public FormListaProdutos() {
             InitializeComponent();
-            Id = FilesJson.Banco.Produtos.Count > 0 ? FilesJson.Banco.Produtos.Count : 1;
+            Id = FilesJson.Banco.Produtos.Count > 0 ? FilesJson.Banco.Produtos.Count + 1 : 1;
             AddListViewItem();
         }
 
@@ -26,10 +26,11 @@ namespace GerenciamentoDeEstoque {
                 frmCadProduto.Fornecedor,
                 frmCadProduto.Valor,
                 frmCadProduto.QtdEstoque);
-            Id++;
             FilesJson.Banco.Produtos.Add(produto);
+            Id++;
             FilesJson.Serializar();
            AddListViewItem();
+           frmCadProduto.Dispose();
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
@@ -49,6 +50,7 @@ namespace GerenciamentoDeEstoque {
                     prod.QuantidadeEstoque = frmCadastroProduto.QtdEstoque;
                     FilesJson.Serializar();
                     AddListViewItem();
+                    frmCadastroProduto.Dispose();
                     break;
                 }
             }

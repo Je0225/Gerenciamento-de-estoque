@@ -20,16 +20,16 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecaoProdutoVenda frmSelecaoProdutoVenda = new FormSelecaoProdutoVenda();
-            frmSelecaoProdutoVenda.ShowDialog();
-            frmSelecaoProdutoVenda.Dispose();
-            if (frmSelecaoProdutoVenda.DialogResult != DialogResult.OK) {
+            FormSelecao<Produto> frmSelecao = new FormSelecao<Produto>(FilesJson.Banco.Produtos, Produto.GetColumnNames());
+            frmSelecao.ShowDialog();
+            if (frmSelecao.DialogResult != DialogResult.OK) {
                 tbProduto.Enabled = true;
                 return;
             }
-            ProdutoSelecionado = frmSelecaoProdutoVenda.ProdutoSelecionado;
+            ProdutoSelecionado = frmSelecao.Selecionado;
             tbProduto.Text = ProdutoSelecionado.Descricao;
             tbProduto.Enabled = false;
+            frmSelecao.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) {
@@ -51,9 +51,28 @@ namespace GerenciamentoDeEstoque {
                 return;
             }
             Quantidade = Convert.ToInt32(tbQuantidade.Text);
+            if (!VerificaEstoque()) {
+                return;
+            }
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private Boolean VerificaEstoque() {
+            Int32 index = FilesJson.Banco.Produtos.IndexOf(ProdutoSelecionado);
+
+            if (ProdutoSelecionado.QuantidadeEstoque.Equals(0)) {
+                MessageBox.Show($"Este produto não está disponível no estoque \n Quantidade de estoque: {ProdutoSelecionado.QuantidadeEstoque}");
+                return false;
+            }
+            Int32 qtd = FilesJson.Banco.Produtos[index].QuantidadeEstoque - Quantidade;
+            if (qtd >= 0) {
+                return true;
+            }
+            MessageBox.Show($"A quantidade informada não pode ser maior que a quantidade disponível do produto no estoque \n Quantidade de estoque: {ProdutoSelecionado.QuantidadeEstoque}");
+            return false;
+        }
+
     }
 
 }

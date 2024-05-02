@@ -70,7 +70,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(51, 33);
+            this.btnAdicionar.Location = new System.Drawing.Point(51, 40);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(108, 38);
             this.btnAdicionar.TabIndex = 2;

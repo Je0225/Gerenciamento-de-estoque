@@ -14,16 +14,17 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
-            CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(null, null);
-            cadastroFornecedor.ShowDialog();
-            if (cadastroFornecedor.DialogResult != DialogResult.OK) {
+            FormCadastroFornecedor formCadastroFornecedor = new FormCadastroFornecedor(null, null);
+            formCadastroFornecedor.ShowDialog();
+            if (formCadastroFornecedor.DialogResult != DialogResult.OK) {
                 return;
             }
-            Fornecedor fornecedor = new Fornecedor(Id, cadastroFornecedor.Empresa, cadastroFornecedor.Marca);
-            Id++;
+            Fornecedor fornecedor = new Fornecedor(Id, formCadastroFornecedor.Empresa, formCadastroFornecedor.Marca);
             FilesJson.Banco.Fornecedores.Add(fornecedor);
+            Id++;
             FilesJson.Serializar();
             AddItendListView();
+            formCadastroFornecedor.Dispose();
         }
 
         private void btnEditar_Click(object sender, EventArgs e) {
@@ -33,16 +34,17 @@ namespace GerenciamentoDeEstoque {
             }
             foreach (Fornecedor forn in FilesJson.Banco.Fornecedores) {
                 if (forn.Equals(selecionado[0].Tag)) {
-                    CadastroFornecedor cadastroFornecedor = new CadastroFornecedor(forn.Empresa, forn.Marca);
-                    cadastroFornecedor.ShowDialog();
+                    FormCadastroFornecedor formCadastroFornecedor = new FormCadastroFornecedor(forn.Empresa, forn.Marca);
+                    formCadastroFornecedor.ShowDialog();
 
-                    if (cadastroFornecedor.DialogResult != DialogResult.OK) {
+                    if (formCadastroFornecedor.DialogResult != DialogResult.OK) {
                         return;
                     }
-                    forn.Empresa = cadastroFornecedor.Empresa;
-                    forn.Marca = cadastroFornecedor.Marca;
+                    forn.Empresa = formCadastroFornecedor.Empresa;
+                    forn.Marca = formCadastroFornecedor.Marca;
                     FilesJson.Serializar();
                     AddItendListView();
+                    formCadastroFornecedor.Dispose();
                     break;
                 }
             }

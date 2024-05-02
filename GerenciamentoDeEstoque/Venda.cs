@@ -3,9 +3,7 @@ using System.Collections.Generic;
 
 namespace GerenciamentoDeEstoque {
 
-    public class Venda {
-
-        public Int32 Id { get; set; }
+    public class Venda : Model{
 
         public Cliente Cliente { get; set; }
 
@@ -28,6 +26,15 @@ namespace GerenciamentoDeEstoque {
             ValorItens = valorItens;
             TotalVenda = totalVenda;
         }
+
+        public override String[] GetValues() {
+            return new String[] { Cliente.Nome, ItensDaVenda.Count.ToString(), Modalidade, PercentualDesconto.ToString(), ValorItens.ToString("F2"), TotalVenda.ToString("F2")};
+        }
+
+        public new static String[] GetColumnNames() {
+            return new[] { "Cliente", "Qtd de Itens", "Modalidade", "Desconto(%)", "Total Itens", "Total Venda" };
+        }
+
     }
 
 }

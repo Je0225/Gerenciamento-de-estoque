@@ -2,21 +2,59 @@
   "Clientes": [
     {
       "Id": 1,
-      "Nome": "jeni",
-      "Sobrenome": "mattes"
+      "Nome": "Jeni",
+      "Sobrenome": "Matt"
+    },
+    {
+      "Id": 2,
+      "Nome": "Gio",
+      "Sobrenome": "Hendges"
+    },
+    {
+      "Id": 2,
+      "Nome": "Elisa",
+      "Sobrenome": "Cast"
     }
   ],
-  "Produtos": [ ],
+  "Produtos": [
+    {
+      "Id": 1,
+      "Descricao": "Rumo",
+      "Fornecedor": {
+        "Id": 1,
+        "Empresa": "Priori Sistemas",
+        "Marca": "Rumo"
+      },
+      "Valor": 100.0,
+      "QuantidadeEstoque": 0
+    },
+    {
+      "Id": 2,
+      "Descricao": "GOVBOX",
+      "Fornecedor": {
+        "Id": 2,
+        "Empresa": "qualquer",
+        "Marca": "ukm"
+      },
+      "Valor": 150.0,
+      "QuantidadeEstoque": 2
+    }
+  ],
   "Fornecedores": [
     {
       "Id": 1,
-      "Empresa": "Priori Soluções",
+      "Empresa": "Priori Sistemas",
       "Marca": "Rumo"
     },
     {
-      "Id": 1,
-      "Empresa": "Priori Sistemas",
+      "Id": 2,
+      "Empresa": "Priori sis",
       "Marca": "GOVBOX"
+    },
+    {
+      "Id": 2,
+      "Empresa": "qualquer",
+      "Marca": "ukm"
     }
   ],
   "Vendas": [
@@ -24,57 +62,85 @@
       "Id": 1,
       "Cliente": {
         "Id": 1,
-        "Nome": "jeni",
-        "Sobrenome": "mattes"
+        "Nome": "Jeni",
+        "Sobrenome": "Matt"
       },
       "ItensDaVenda": [
         {
           "Key": {
             "Id": 1,
-            "Descricao": "GOVBOX",
+            "Descricao": "Rumo",
             "Fornecedor": {
               "Id": 1,
               "Empresa": "Priori Sistemas",
-              "Marca": "GOVBOX"
+              "Marca": "Rumo"
             },
             "Valor": 100.0,
-            "QuantidadeEstoque": 2
+            "QuantidadeEstoque": 1
           },
-          "Value": 2
+          "Value": 1
         }
       ],
-      "Modalidade": "Parcelado",
-      "PercentualDesconto": 0.0,
-      "ValorItens": 200.0,
-      "TotalVenda": 200.0
+      "Modalidade": "A Vista - Dinheiro",
+      "PercentualDesconto": 10.0,
+      "ValorItens": 100.0,
+      "TotalVenda": 90.0
     },
     {
-      "Id": 1,
+      "Id": 2,
       "Cliente": {
-        "Id": 1,
-        "Nome": "jeni",
-        "Sobrenome": "mattes"
+        "Id": 2,
+        "Nome": "Gio",
+        "Sobrenome": "Hend"
       },
       "ItensDaVenda": [
         {
           "Key": {
             "Id": 2,
+            "Descricao": "GOVBOX",
+            "Fornecedor": {
+              "Id": 2,
+              "Empresa": "Priori",
+              "Marca": "GOVBOX"
+            },
+            "Valor": 150.0,
+            "QuantidadeEstoque": 0
+          },
+          "Value": 1
+        }
+      ],
+      "Modalidade": "Parcelado",
+      "PercentualDesconto": 20.0,
+      "ValorItens": 150.0,
+      "TotalVenda": 120.0
+    },
+    {
+      "Id": 3,
+      "Cliente": {
+        "Id": 2,
+        "Nome": "Elisa",
+        "Sobrenome": "Cast"
+      },
+      "ItensDaVenda": [
+        {
+          "Key": {
+            "Id": 1,
             "Descricao": "Rumo",
             "Fornecedor": {
               "Id": 1,
-              "Empresa": "Priori Soluções",
+              "Empresa": "Priori Sistemas",
               "Marca": "Rumo"
             },
-            "Valor": 150.0,
-            "QuantidadeEstoque": 1
+            "Valor": 100.0,
+            "QuantidadeEstoque": 0
           },
-          "Value": 2
+          "Value": 1
         }
       ],
       "Modalidade": "A Vista - Dinheiro",
       "PercentualDesconto": 10.0,
-      "ValorItens": 300.0,
-      "TotalVenda": 270.0
+      "ValorItens": 100.0,
+      "TotalVenda": 90.0
     }
   ],
   "ModalidadesPagamento": [

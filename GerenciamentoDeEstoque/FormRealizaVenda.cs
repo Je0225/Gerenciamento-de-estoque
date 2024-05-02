@@ -27,27 +27,25 @@ namespace GerenciamentoDeEstoque {
             foreach (String forma in FilesJson.Banco.ModalidadesPagamento) {
                 cbModalidade.Items.Add(forma);
             }
-            Id = FilesJson.Banco.Vendas.Count > 0 ? FilesJson.Banco.Vendas.Count : 1;
+            Id = FilesJson.Banco.Vendas.Count > 0 ? FilesJson.Banco.Vendas.Count + 1: 1;
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            SelecaoClienteVenda frmInformaCliente = new SelecaoClienteVenda();
-            frmInformaCliente.ShowDialog();
-            frmInformaCliente.Dispose();
-
-            if (frmInformaCliente.DialogResult != DialogResult.OK) {
+            FormSelecao<Cliente> formSelecao = new FormSelecao<Cliente>(FilesJson.Banco.Clientes, Cliente.GetColumnNames());
+            formSelecao.ShowDialog();
+            if (formSelecao.DialogResult != DialogResult.OK) {
                 tbCliente.Enabled = true;
                 return;
             }
-            Cliente = frmInformaCliente.ClienteSelecionado;
+            Cliente = formSelecao.Selecionado;
             tbCliente.Text = $@"{Cliente.Nome} {Cliente.Sobrenome}";
             tbCliente.Enabled = false;
+            formSelecao.Dispose();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e) {
             FormInformaProdutoVenda frmProdutoVenda = new FormInformaProdutoVenda(null, 0);
             frmProdutoVenda.ShowDialog();
-            frmProdutoVenda.Dispose();
 
             if (frmProdutoVenda.DialogResult != DialogResult.OK) {
                 tbCliente.Enabled = false;
@@ -57,6 +55,7 @@ namespace GerenciamentoDeEstoque {
             AddItemListView();
             ValorItens = CalculaValorItens();
             tbTotalItens.Text = ValorItens.ToString("F2");
+            frmProdutoVenda.Dispose();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e) {
@@ -81,7 +80,6 @@ namespace GerenciamentoDeEstoque {
                 if (lvItensVenda.SelectedItems[0].Tag.Equals(kvp.Key)) {
                     FormInformaProdutoVenda frmInformaProdutoVenda = new FormInformaProdutoVenda(kvp.Key, kvp.Value);
                     frmInformaProdutoVenda.ShowDialog();
-                    frmInformaProdutoVenda.Dispose();
 
                     if (frmInformaProdutoVenda.DialogResult != DialogResult.OK) {
                         tbCliente.Enabled = false;
@@ -92,6 +90,7 @@ namespace GerenciamentoDeEstoque {
                     AddItemListView();
                     ValorItens = CalculaValorItens();
                     tbTotalItens.Text = ValorItens.ToString("F2");
+                    frmInformaProdutoVenda.Dispose();
                     return;
                 }
             }
@@ -113,7 +112,7 @@ namespace GerenciamentoDeEstoque {
             }
             if (!ValorItens.Equals(0)) {
                 foreach (KeyValuePair<Produto, Int32> kvp in ItensVenda) {
-                    total += valorItens - (valorItens * (PercentualDesconto / 100));
+                    total = valorItens - (valorItens * (PercentualDesconto / 100));
                 }
             }
             return total;
@@ -143,6 +142,7 @@ namespace GerenciamentoDeEstoque {
                 MessageBox.Show(@"Selecione uma modalidade para fechar a venda");
                 return;
             }
+            AtualizaEstoque();
             Modalidade = cbModalidade.SelectedItem.ToString();
             Venda venda = new Venda(Id, Cliente, ItensVenda, Modalidade, PercentualDesconto, ValorItens, TotalVenda);
             FilesJson.Banco.Vendas.Add(venda);
@@ -163,11 +163,16 @@ namespace GerenciamentoDeEstoque {
             }
             foreach (KeyValuePair<Produto, Int32> kvp in ItensVenda) {
                 lvItensVenda.Items.Add(new ListViewItem(new[] {
-                    kvp.Key.Id.ToString("F"),
                     kvp.Key.Descricao,
                     kvp.Value.ToString(),
                     kvp.Key.Valor.ToString("F2")
                 }) { Tag = kvp.Key });
+            }
+        }
+
+        private void AtualizaEstoque() {
+            foreach (KeyValuePair<Produto, Int32> kvp in ItensVenda) {
+                kvp.Key.QuantidadeEstoque -= kvp.Value;
             }
         }
 

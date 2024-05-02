@@ -3,9 +3,7 @@ using System.Security.Cryptography;
 
 namespace GerenciamentoDeEstoque {
 
-    public  class Produto {
-
-        public int Id { get; set; }
+    public  class Produto: Model {
 
         public string Descricao { get; set; }
 
@@ -22,6 +20,15 @@ namespace GerenciamentoDeEstoque {
             Valor = valor;
             QuantidadeEstoque = quantidadeEstoque;
         }
+
+        public override String[] GetValues() {
+            return new[] { Descricao, Fornecedor.Empresa, Valor.ToString("F2"), QuantidadeEstoque.ToString("D")};
+        }
+
+        public new static String[] GetColumnNames() {
+            return new[] { "Descricao", "Fornecedor", "Valor", "Estoque"};
+        }
+
     }
 
 }

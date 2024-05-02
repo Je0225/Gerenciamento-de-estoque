@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
-    public partial class CadastroFornecedor: Form {
+    public partial class FormCadastroFornecedor: Form {
 
         public String Empresa => tbEmpresa.Text;
 
         public String Marca => tbMarca.Text;
 
-        public CadastroFornecedor(String empresa, String marca) {
+        public FormCadastroFornecedor(String empresa, String marca) {
             InitializeComponent();
             if (empresa != null || marca != null) {
                 tbEmpresa.Text = empresa;
