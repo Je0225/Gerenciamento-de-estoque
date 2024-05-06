@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
@@ -24,20 +27,20 @@ namespace GerenciamentoDeEstoque {
             InitializeComponent();
             ItensVenda = new List<KeyValuePair<Produto, Int32>>();
             cbModalidade.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach (String forma in FilesJson.Banco.ModalidadesPagamento) {
+            foreach (String forma in Repository.Banco.ModalidadesPagamento) {
                 cbModalidade.Items.Add(forma);
             }
-            Id = FilesJson.Banco.Vendas.Count > 0 ? FilesJson.Banco.Vendas.Count + 1: 1;
+            Id = Repository.Banco.Vendas.Count > 0 ? Repository.Banco.Vendas.Count + 1: 1;
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecao<Cliente> formSelecao = new FormSelecao<Cliente>(FilesJson.Banco.Clientes, Cliente.GetColumnNames());
+            FormSelecao<Cliente> formSelecao = new FormSelecao<Cliente>(Repository.Banco.Clientes, Cliente.GetColumnNames());
             formSelecao.ShowDialog();
             if (formSelecao.DialogResult != DialogResult.OK) {
                 tbCliente.Enabled = true;
                 return;
             }
-            Cliente = formSelecao.Selecionado;
+            Cliente = formSelecao.SelecionadoCast;
             tbCliente.Text = $@"{Cliente.Nome} {Cliente.Sobrenome}";
             tbCliente.Enabled = false;
             formSelecao.Dispose();
@@ -50,6 +53,12 @@ namespace GerenciamentoDeEstoque {
             if (frmProdutoVenda.DialogResult != DialogResult.OK) {
                 tbCliente.Enabled = false;
                 return;
+            }
+            foreach (KeyValuePair<Produto, Int32> kvp in ItensVenda) {
+                if (kvp.Key.Equals(frmProdutoVenda.ProdutoSelecionado)) {
+                    MessageBox.Show("Este item já está na lista de items da venda");
+                    return;
+                }
             }
             ItensVenda.Add(new KeyValuePair<Produto, Int32>(frmProdutoVenda.ProdutoSelecionado, frmProdutoVenda.Quantidade));
             AddItemListView();
@@ -145,9 +154,9 @@ namespace GerenciamentoDeEstoque {
             AtualizaEstoque();
             Modalidade = cbModalidade.SelectedItem.ToString();
             Venda venda = new Venda(Id, Cliente, ItensVenda, Modalidade, PercentualDesconto, ValorItens, TotalVenda);
-            FilesJson.Banco.Vendas.Add(venda);
+            Repository.Banco.Vendas.Add(venda);
             Id++;
-            FilesJson.Serializar();
+            Repository.Save();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -176,6 +185,13 @@ namespace GerenciamentoDeEstoque {
             }
         }
 
+        private void tbDesconto_KeyDown(object sender, KeyEventArgs e) {
+            e.Handled = true;
+            if ((e.KeyValue > 47 && e.KeyValue < 58)  || e.KeyCode == Keys.Enter || e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete || e.KeyCode == Keys.PrintScreen) {
+                e.Handled = false;
+                
+            } 
+        }
     }
 
 }

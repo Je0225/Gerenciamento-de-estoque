@@ -7,25 +7,28 @@ namespace GerenciamentoDeEstoque {
 
         public FormPrincipal() {
             InitializeComponent();
-            FilesJson.CriaArquivosEListas();
+            Registro.Add(nameof(Fornecedor) , typeof(FormCadastroFornecedor));
+            Registro.Add(nameof(Cliente), typeof(FormCadastroCliente));
+            Registro.Add(nameof(Produto), typeof(FormCadastroProduto));
+            Repository.CriaArquivosEListas();
         }
 
         private void tsmiClientes_Click(object sender, EventArgs e) {
-            FormListaClientes formListaClientesClientes = new FormListaClientes();
-            formListaClientesClientes.ShowDialog(this);
-            formListaClientesClientes.Dispose();
+            FormLista<Cliente> frmClientes = new FormLista<Cliente>(Repository.Banco.Clientes, Cliente.GetColumnNames());
+            frmClientes.ShowDialog();
+            frmClientes.Dispose();
         }
 
         private void tsmiFornecedores_Click(object sender, EventArgs e) {
-            FormListaFornecedores formListaFornecedores = new FormListaFornecedores();
-            formListaFornecedores.ShowDialog(this);
-            formListaFornecedores.Dispose();
+            FormLista<Fornecedor> frmFornecedor = new FormLista<Fornecedor>(Repository.Banco.Fornecedores, Fornecedor.GetColumnNames());
+            frmFornecedor.ShowDialog(this);
+            frmFornecedor.Dispose();
         }
 
         private void cadastroDeProdutoToolStripMenuItem_Click(object sender, EventArgs e) {
-            FormListaProdutos formListaProdutos = new FormListaProdutos();
-            formListaProdutos.ShowDialog(this);
-            formListaProdutos.Dispose();
+            FormLista<Produto> frmProduto = new FormLista<Produto>(Repository.Banco.Produtos, Produto.GetColumnNames());
+            frmProduto.ShowDialog(this);
+            frmProduto.Dispose();
         }
 
         private void realizarVendaToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -43,6 +46,7 @@ namespace GerenciamentoDeEstoque {
         private void vendasToolStripMenuItem_Click(object sender, EventArgs e) {
             FormListagemVendas formListagemVendas = new FormListagemVendas();
             formListagemVendas.ShowDialog();
+            formListagemVendas.Dispose();
         }
     }
 

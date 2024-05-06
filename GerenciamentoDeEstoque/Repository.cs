@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
 using Newtonsoft.Json;
 
 namespace GerenciamentoDeEstoque {
 
-    public static class FilesJson {
+    public static class Repository {
 
         public static Banco Banco { get; private set; }
 
@@ -24,7 +23,7 @@ namespace GerenciamentoDeEstoque {
             }
         }
 
-        public static void Serializar() {
+        public static void Save() {
             String bancoSerializado = JsonConvert.SerializeObject(Banco, Formatting.Indented);
             File.WriteAllText(pathBanco, bancoSerializado);
             DesserializaBanco();

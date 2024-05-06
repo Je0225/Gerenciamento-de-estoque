@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Security.Cryptography;
 
 namespace GerenciamentoDeEstoque {
@@ -13,6 +14,8 @@ namespace GerenciamentoDeEstoque {
 
         public Int32 QuantidadeEstoque { get; set; }
 
+        public Produto() {}
+
         public Produto(int id, string descricao, Fornecedor fornecedor, Double valor, int quantidadeEstoque) {
             Id = id;
             Descricao = descricao;
@@ -20,6 +23,8 @@ namespace GerenciamentoDeEstoque {
             Valor = valor;
             QuantidadeEstoque = quantidadeEstoque;
         }
+
+        public override String Proxy => Descricao;
 
         public override String[] GetValues() {
             return new[] { Descricao, Fornecedor.Empresa, Valor.ToString("F2"), QuantidadeEstoque.ToString("D")};

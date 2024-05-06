@@ -20,13 +20,13 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecao<Produto> frmSelecao = new FormSelecao<Produto>(FilesJson.Banco.Produtos, Produto.GetColumnNames());
+            FormSelecao<Produto> frmSelecao = new FormSelecao<Produto>(Repository.Banco.Produtos, Produto.GetColumnNames());
             frmSelecao.ShowDialog();
             if (frmSelecao.DialogResult != DialogResult.OK) {
                 tbProduto.Enabled = true;
                 return;
             }
-            ProdutoSelecionado = frmSelecao.Selecionado;
+            ProdutoSelecionado = frmSelecao.SelecionadoCast;
             tbProduto.Text = ProdutoSelecionado.Descricao;
             tbProduto.Enabled = false;
             frmSelecao.Dispose();
@@ -59,13 +59,13 @@ namespace GerenciamentoDeEstoque {
         }
 
         private Boolean VerificaEstoque() {
-            Int32 index = FilesJson.Banco.Produtos.IndexOf(ProdutoSelecionado);
+            Int32 index = Repository.Banco.Produtos.IndexOf(ProdutoSelecionado);
 
             if (ProdutoSelecionado.QuantidadeEstoque.Equals(0)) {
                 MessageBox.Show($"Este produto não está disponível no estoque \n Quantidade de estoque: {ProdutoSelecionado.QuantidadeEstoque}");
                 return false;
             }
-            Int32 qtd = FilesJson.Banco.Produtos[index].QuantidadeEstoque - Quantidade;
+            Int32 qtd = Repository.Banco.Produtos[index].QuantidadeEstoque - Quantidade;
             if (qtd >= 0) {
                 return true;
             }

@@ -1,7 +1,6 @@
 ﻿namespace GerenciamentoDeEstoque
 {
-    partial class FormCadastroProduto
-    {
+    partial class FormCadastroProduto: FormCadastro {
         /// <summary>
         /// Required designer variable.
         /// </summary>

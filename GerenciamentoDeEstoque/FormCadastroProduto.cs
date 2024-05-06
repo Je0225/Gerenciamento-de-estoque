@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
-    public partial class FormCadastroProduto: Form {
+    public partial class FormCadastroProduto: FormCadastro {
 
         public String Descricao => tbDescricao.Text;
 
@@ -40,12 +40,12 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecao<Fornecedor> frmSelecao = new FormSelecao<Fornecedor>(FilesJson.Banco.Fornecedores, Fornecedor.GetColumnNames());
+            FormSelecao<Fornecedor> frmSelecao = new FormSelecao<Fornecedor>(Repository.Banco.Fornecedores, Fornecedor.GetColumnNames());
             frmSelecao.ShowDialog();
             if (frmSelecao.DialogResult != DialogResult.OK) {
                 return;
             }
-            Fornecedor = frmSelecao.Selecionado;
+            Fornecedor = frmSelecao.SelecionadoCast;
             tbFornecedor.Text = Fornecedor.Empresa;
             frmSelecao.Dispose();
         }
@@ -55,6 +55,13 @@ namespace GerenciamentoDeEstoque {
             Close();
         }
 
+        public override void UpdateModel(Model model) {
+            Produto produto = (Produto)model;
+            produto.Fornecedor = Fornecedor;
+            produto.Descricao = Descricao;
+            produto.Valor = Valor;
+            produto.QuantidadeEstoque = QtdEstoque;
+        }
     }
 
 }

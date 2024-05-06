@@ -27,6 +27,8 @@ namespace GerenciamentoDeEstoque {
             TotalVenda = totalVenda;
         }
 
+        public override String Proxy => "";
+
         public override String[] GetValues() {
             return new String[] { Cliente.Nome, ItensDaVenda.Count.ToString(), Modalidade, PercentualDesconto.ToString(), ValorItens.ToString("F2"), TotalVenda.ToString("F2")};
         }

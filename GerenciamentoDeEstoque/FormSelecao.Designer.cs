@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // btnSalvar
+            // btnSelecionar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(260, 401);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 6;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSelecionar.Location = new System.Drawing.Point(260, 401);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
+            this.btnSelecionar.TabIndex = 6;
+            this.btnSelecionar.Text = "Salvar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -65,13 +65,13 @@
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
             // 
-            // FormFiltroVendas
+            // FormSelecao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 450);
             this.Controls.Add(this.ListView);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -84,7 +84,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ListView ListView;
     }

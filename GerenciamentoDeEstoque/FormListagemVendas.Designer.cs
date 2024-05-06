@@ -40,11 +40,6 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lvVendas = new System.Windows.Forms.ListView();
-            this.clmCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmDesconto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmQuantiaItens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmValorIntens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmValorTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -157,12 +152,6 @@
             // 
             // lvVendas
             // 
-            this.lvVendas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmCliente,
-            this.clmDesconto,
-            this.clmQuantiaItens,
-            this.clmValorIntens,
-            this.clmValorTotal});
             this.lvVendas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvVendas.HideSelection = false;
             this.lvVendas.Location = new System.Drawing.Point(71, 110);
@@ -171,31 +160,6 @@
             this.lvVendas.TabIndex = 15;
             this.lvVendas.UseCompatibleStateImageBehavior = false;
             this.lvVendas.View = System.Windows.Forms.View.Details;
-            // 
-            // clmCliente
-            // 
-            this.clmCliente.Text = "Cliente";
-            this.clmCliente.Width = 70;
-            // 
-            // clmDesconto
-            // 
-            this.clmDesconto.Text = "Desconto(%)";
-            this.clmDesconto.Width = 83;
-            // 
-            // clmQuantiaItens
-            // 
-            this.clmQuantiaItens.Text = "Qtd Itens";
-            this.clmQuantiaItens.Width = 84;
-            // 
-            // clmValorIntens
-            // 
-            this.clmValorIntens.Text = "Valor Itens";
-            this.clmValorIntens.Width = 114;
-            // 
-            // clmValorTotal
-            // 
-            this.clmValorTotal.Text = "Valor Total";
-            this.clmValorTotal.Width = 90;
             // 
             // FormListagemVendas
             // 
@@ -230,10 +194,5 @@
         private System.Windows.Forms.Label lblFiltrarPor;
         private System.Windows.Forms.ComboBox cbFiltro;
         private System.Windows.Forms.ListView lvVendas;
-        private System.Windows.Forms.ColumnHeader clmCliente;
-        private System.Windows.Forms.ColumnHeader clmDesconto;
-        private System.Windows.Forms.ColumnHeader clmQuantiaItens;
-        private System.Windows.Forms.ColumnHeader clmValorIntens;
-        private System.Windows.Forms.ColumnHeader clmValorTotal;
     }
 }

@@ -13,12 +13,12 @@ namespace GerenciamentoDeEstoque {
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e) {
-            FormSelecao<Fornecedor> FormSelecao = new FormSelecao<Fornecedor>(FilesJson.Banco.Fornecedores, Fornecedor.GetColumnNames());
+            FormSelecao<Fornecedor> FormSelecao = new FormSelecao<Fornecedor>(Repository.Banco.Fornecedores, Fornecedor.GetColumnNames());
             FormSelecao.ShowDialog();
             if (FormSelecao.DialogResult != DialogResult.OK) {
                 return;
             }
-            fornecedor = FormSelecao.Selecionado;
+            fornecedor = FormSelecao.SelecionadoCast;
             tbFornecedor.Text = fornecedor.Empresa;
             FormSelecao.Dispose();
         }
@@ -29,7 +29,7 @@ namespace GerenciamentoDeEstoque {
                 MessageBox.Show("Selecione um fornecedor");
                 return;
             }
-            foreach (Produto prod in FilesJson.Banco.Produtos.Where(p => p.Fornecedor.Id.Equals(fornecedor.Id))) {
+            foreach (Produto prod in Repository.Banco.Produtos.Where(p => p.Fornecedor.Id.Equals(fornecedor.Id))) {
                 lvListagem.Items.Add(new ListViewItem(new[] { prod.Fornecedor.Empresa, prod.Fornecedor.Marca, prod.Descricao, prod.QuantidadeEstoque.ToString("D"), prod.Valor.ToString("F2") }) { Tag = prod });
             }
         }

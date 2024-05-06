@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
-    <Compile Include="FilesJson.cs" />
+    <Compile Include="FormCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="FormCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,23 +80,11 @@
     <Compile Include="FormInformaProdutoVenda.Designer.cs">
       <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaClientes.cs">
+    <Compile Include="FormLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaClientes.Designer.cs">
-      <DependentUpon>FormListaClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormListaFornecedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormListaFornecedores.Designer.cs">
-      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormListaProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormListaProdutos.Designer.cs">
-      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    <Compile Include="FormLista.Designer.cs">
+      <DependentUpon>FormLista.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -125,6 +117,7 @@
     <Compile Include="FormListagemVendas.Designer.cs">
       <DependentUpon>FormListagemVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISelecionavel.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
@@ -142,14 +135,8 @@
     <EmbeddedResource Include="FormInformaProdutoVenda.resx">
       <DependentUpon>FormInformaProdutoVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaClientes.resx">
-      <DependentUpon>FormListaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormListaFornecedores.resx">
-      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormListaProdutos.resx">
-      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="FormLista.resx">
+      <DependentUpon>FormLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

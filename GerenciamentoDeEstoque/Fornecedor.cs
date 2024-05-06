@@ -10,11 +10,15 @@ namespace GerenciamentoDeEstoque {
 
         public String Marca { get; set; }
 
+        public Fornecedor(){}
+
         public Fornecedor(Int32 id, String empresa, String marca) {
             Id = id;
             Empresa = empresa;
             Marca = marca;
         }
+
+        public override String Proxy => Empresa;
 
         public override String[] GetValues() {
             return new[] {Empresa, Marca };

@@ -4,9 +4,11 @@ using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
-    public partial class FormSelecao<T>: Form where T: Model {
+    public partial class FormSelecao<T>: Form, ISelecionavel where T: Model {
 
-        public T Selecionado { get; private set; }
+        public Model Selecionado { get; private set; }
+
+        public T SelecionadoCast => (T)Selecionado;
 
         private List<T> Lista { get; }
 

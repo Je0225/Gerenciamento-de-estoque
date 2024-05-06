@@ -4,7 +4,9 @@ namespace GerenciamentoDeEstoque {
 
     public abstract class Model {
 
-        public Int32 Id { get; set; }
+        public Int32 Id { get;  set; }
+
+        public abstract String Proxy { get; }
 
         public abstract String[] GetValues();
 

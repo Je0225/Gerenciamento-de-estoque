@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoDeEstoque
 {
-    partial class FormListaClientes
+    partial class FormLista<T>
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lvClientes = new System.Windows.Forms.ListView();
-            this.clmNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmSobrenome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.listView = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 350);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(800, 100);
+            this.panel3.TabIndex = 3;
             // 
             // panel1
             // 
@@ -48,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(597, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 350);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 4;
             // 
             // btnEditar
             // 
@@ -72,47 +78,26 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lvClientes);
+            this.panel2.Controls.Add(this.listView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(30, 30, 0, 0);
             this.panel2.Size = new System.Drawing.Size(597, 350);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 5;
             // 
-            // lvClientes
+            // listView
             // 
-            this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmNome,
-            this.clmSobrenome});
-            this.lvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvClientes.FullRowSelect = true;
-            this.lvClientes.HideSelection = false;
-            this.lvClientes.Location = new System.Drawing.Point(30, 30);
-            this.lvClientes.MultiSelect = false;
-            this.lvClientes.Name = "lvClientes";
-            this.lvClientes.Size = new System.Drawing.Size(567, 320);
-            this.lvClientes.TabIndex = 0;
-            this.lvClientes.UseCompatibleStateImageBehavior = false;
-            this.lvClientes.View = System.Windows.Forms.View.Details;
-            // 
-            // clmNome
-            // 
-            this.clmNome.Text = "Nome";
-            this.clmNome.Width = 157;
-            // 
-            // clmSobrenome
-            // 
-            this.clmSobrenome.Text = "Sobrenome";
-            this.clmSobrenome.Width = 202;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 350);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 100);
-            this.panel3.TabIndex = 2;
+            this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.FullRowSelect = true;
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(30, 30);
+            this.listView.MultiSelect = false;
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(567, 320);
+            this.listView.TabIndex = 0;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
             // FormLista
             // 
@@ -122,7 +107,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Name = "FormListaClientes";
+            this.Name = "FormLista";
             this.Text = "FormLista";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -132,13 +117,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView lvClientes;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.ColumnHeader clmNome;
-        private System.Windows.Forms.ColumnHeader clmSobrenome;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListView listView;
     }
 }

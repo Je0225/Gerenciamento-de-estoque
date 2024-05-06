@@ -146,6 +146,7 @@
             this.tbDesconto.Size = new System.Drawing.Size(58, 20);
             this.tbDesconto.TabIndex = 11;
             this.tbDesconto.TextChanged += new System.EventHandler(this.tbDesconto_TextChanged);
+            this.tbDesconto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbDesconto_KeyDown);
             // 
             // lblModalidade
             // 

@@ -3,17 +3,17 @@ using System.Windows.Forms;
 
 namespace GerenciamentoDeEstoque {
 
-    public partial class FormCadastroCliente: Form {
+    public partial class FormCadastroCliente: FormCadastro {
 
         public String Nome => tbNome.Text.Trim();
 
         public String Sobrenome => tbSobrenome.Text.Trim();
 
-        public FormCadastroCliente(String nome, String sobrenome) {
+        public FormCadastroCliente(Cliente cliente) {
             InitializeComponent();
-            if (nome != null || sobrenome != null) {
-                tbNome.Text = nome;
-                tbSobrenome.Text = sobrenome;
+            if (cliente != null) {
+                tbNome.Text = cliente.Nome;
+                tbSobrenome.Text = cliente.Sobrenome;
             }
         }
          
@@ -30,7 +30,12 @@ namespace GerenciamentoDeEstoque {
             DialogResult = DialogResult.Cancel;
             Close();
         }
-
+        /*
+        public override void UpdateModel(Model model) {
+            Cliente cliente = (Cliente)model;
+            cliente.Nome = Nome;
+            cliente.Sobrenome = Sobrenome;
+        }
+        */
     }
-
 }

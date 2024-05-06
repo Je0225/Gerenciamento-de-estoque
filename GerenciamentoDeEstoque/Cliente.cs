@@ -8,11 +8,15 @@ namespace GerenciamentoDeEstoque {
 
         public String Sobrenome { get; set; }
 
-        public Cliente(Int32 id, String nome, String sobrenome) {
+        public Cliente() {}
+
+        public Cliente(Int32 id, String nome, String sobrenome): this() {
             Id = id;
             Nome = nome;
             Sobrenome = sobrenome;
         }
+
+        public override String Proxy => $"{Nome} {Sobrenome}";
 
         public override String[] GetValues() {
             return new[] { Nome, Sobrenome };

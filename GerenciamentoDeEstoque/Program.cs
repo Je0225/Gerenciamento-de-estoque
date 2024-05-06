@@ -18,7 +18,7 @@ namespace GerenciamentoDeEstoque
         static void Main()
         {
             try {
-                FilesJson.CriaArquivosEListas();
+                Repository.CriaArquivosEListas();
             } catch(Exception e) {
                 MessageBox.Show($"{e.Message} \n Feche todos os processos que estejam ocupando o arquivo no diretório especificado e tente novamente", @"Erro na leitura dos dados");
                 Environment.Exit(0);
